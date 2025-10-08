@@ -12,15 +12,15 @@
 <form action="adduser" method="post">
     @csrf
     <div>
-        <input type="text" placeholder="enter the Name" name="username">
+        <input type="text" placeholder="enter the Name" name="username" value="{{old('username')}}">
         <span>@error('username'){{$message}}@enderror</span>
     </div>
     <div>
-        <input type="email" placeholder="enter the Email" name="email">
+        <input type="email" placeholder="enter the Email" name="email" value="{{old('email')}}">
         <span>@error('email'){{$message}}@enderror</span>
     </div>
     <div>
-        <input type="text" placeholder="enter the city" name="city">
+        <input type="text" placeholder="enter the city" name="city" value="{{old('city')}}">
         <span>@error('city'){{$message}}@enderror</span>
     </div>
    
