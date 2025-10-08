@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+//for database
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -31,10 +34,6 @@ class UserController extends Controller
     
     function adduser(Request  $req){
 
-    //All data One time 
-   
-
-
     //Validation For Form Data
     $req->validate([
         'username'=>'required|min:3 |max:10',
@@ -49,7 +48,8 @@ class UserController extends Controller
         'username.max'=>'Name must be less  than 10',
         'email.email'=>'Enter Correct  Email',
     ]);
-     return $req;
+    //All data One time
+    //  return $req;
 
 
     //One At A time 
@@ -65,6 +65,12 @@ class UserController extends Controller
     // // echo"User Skills is ".print_r($req->skill,true);
     // echo "User Skills: <pre>" . print_r($req->skill, true) . "</pre>";
 
-
     }
+    //Database
+    function users (){
+        //Direct query 
+        return DB::select('select * from users');
+    }
+
+
 }
