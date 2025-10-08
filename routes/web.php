@@ -10,6 +10,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+Route::get('/about', function () {
+    return view('about');
+});
 
 
 //Redirect for the page 
@@ -26,10 +29,10 @@ Route::get('user',[UserController::class,'view']);
 
 
 //Routing With Passing Data
-Route::get('/about/{name}', function ($name) {
-    echo $name;
-    return view('about');
-});
+// Route::get('/about/{name}', function ($name) {
+//     echo $name;
+//     return view('about');
+// });
 
 
 Route::get('avishar',[UserController::class,'userhome']);
