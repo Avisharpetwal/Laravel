@@ -7,10 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 
+Route::view('home','home')->middleware('check1');
+Route::view('about','about');
 
 
 
@@ -35,6 +37,15 @@ Route::get('aboutuser/{name}',[UserController::class,'username']);
 Route::get('user',[UserController::class,'view']);
 
 
+//Group Of Middleware To Group Of Routes
+Route::middleware('check1')->group(function(){
+Route::view('home','home');
+Route::view('about','about');
+Route::view('contact','home');
+Route::view('list','about');
+
+
+});
 
 
 //Routing With Passing Data
@@ -45,14 +56,6 @@ Route::get('user',[UserController::class,'view']);
 
 
 Route::get('avishar',[UserController::class,'userhome']);
-
-
-
-
-
-
-
-
 
 
 
