@@ -1,5 +1,5 @@
 <div>
-    <h1>User Details</h1>
+    <h1>Users Details</h1>
     <table border="10">
         <tr>
             <td>Id</td>
