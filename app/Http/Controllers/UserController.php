@@ -32,11 +32,18 @@ class UserController extends Controller
     // return $req;
 
     //One At A time 
-    echo "User name is ".$req->username;
+    echo "User name is : ".$req->username;
     echo"<br>";
-    echo "User email is " .$req->email;
+    echo "User email is  :" .$req->email;
     echo"<br>";
-    echo "User City is ".$req->city;
+    echo "User City is : ".$req->city;
     echo"<br>";
+    
+    echo "User City is : ".$req->gender;
+    echo"<br>";
+    // echo"User Skills is ".print_r($req->skill,true);
+    echo "User Skills: <pre>" . print_r($req->skill, true) . "</pre>";
+
+
     }
 }
