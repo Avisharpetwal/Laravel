@@ -27,22 +27,37 @@ class UserController extends Controller
         return view('avishar',['names'=>$name,"users"=>$user]);
     }
     
+    
+    
     function adduser(Request  $req){
+
     //All data One time 
-    // return $req;
+   
+
+
+    //Validation For Form Data
+    $req->validate([
+        'username'=>'required|min:3 |max:10',
+        'email'=>'required |email',
+        'city'=>'required |max:20',
+        'skill'=>'required',
+
+    ]);
+     return $req;
+
 
     //One At A time 
-    echo "User name is : ".$req->username;
-    echo"<br>";
-    echo "User email is  :" .$req->email;
-    echo"<br>";
-    echo "User City is : ".$req->city;
-    echo"<br>";
+    // echo "User name is : ".$req->username;
+    // echo"<br>";
+    // echo "User email is  :" .$req->email;
+    // echo"<br>";
+    // echo "User City is : ".$req->city;
+    // echo"<br>";
     
-    echo "User City is : ".$req->gender;
-    echo"<br>";
-    // echo"User Skills is ".print_r($req->skill,true);
-    echo "User Skills: <pre>" . print_r($req->skill, true) . "</pre>";
+    // echo "User City is : ".$req->gender;
+    // echo"<br>";
+    // // echo"User Skills is ".print_r($req->skill,true);
+    // echo "User Skills: <pre>" . print_r($req->skill, true) . "</pre>";
 
 
     }

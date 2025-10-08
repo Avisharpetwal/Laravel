@@ -1,14 +1,27 @@
 <h1>Login Form</h1>
+
+
+<!-- Display Error At the Top  -->
+<!-- @if($errors->any())
+@foreach($errors->all() as $err)
+<div style="color:red">
+    {{$err}}
+</div>
+@endforeach
+@endif -->
 <form action="adduser" method="post">
     @csrf
     <div>
         <input type="text" placeholder="enter the Name" name="username">
+        <span>@error('username'){{$message}}@enderror</span>
     </div>
     <div>
         <input type="email" placeholder="enter the Email" name="email">
+        <span>@error('email'){{$message}}@enderror</span>
     </div>
     <div>
         <input type="text" placeholder="enter the city" name="city">
+        <span>@error('city'){{$message}}@enderror</span>
     </div>
    
 
@@ -20,8 +33,9 @@
         <label for="node" >Node</label>
         <input type="checkbox" name="skill[]" id="java" value="java">
         <label for="java" >Java</label>
+         <span>@error('skill'){{$message}}@enderror</span>
     </div>
-    <div>
+    <!-- <div>
         <h5>Gender</h5>
         <input type="radio" name="gender" id="male" value="male">
         <label for="male" >Male</label>
@@ -39,7 +53,7 @@
     </div>
     <br>
     <br>
-     <div>
+     <div> -->
         <button>Add New User</button>
     </div>
 </form>
