@@ -7,9 +7,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home/profile/user/add', function () {
+//     return view('home');
+// });
+
+
+
+
+//Named Route 
+Route::view('/home/profile/user/add','home')->name('hm');
+
+
+ 
 Route::get('/about', function () {
     return view('about');
 });
