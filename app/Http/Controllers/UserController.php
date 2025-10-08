@@ -42,6 +42,12 @@ class UserController extends Controller
         'city'=>'required |max:20',
         'skill'=>'required',
 
+    ],[
+        //Custom Valid Message for the Form Fields
+        'username.required'=>'Enter the Your Name here',
+        'username.min'=>' Name must be greater than 3 ',
+        'username.max'=>'Name must be less  than 10',
+        'email.email'=>'Enter Correct  Email',
     ]);
      return $req;
 
