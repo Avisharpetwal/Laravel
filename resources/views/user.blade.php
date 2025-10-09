@@ -19,6 +19,7 @@
 </div>
 --}}
 
+{{--
 <div>
     <h1>Users Details</h1>
     <table border="10">
@@ -43,6 +44,31 @@
         </table>
      
 </div>
+--}}
+
+
+
+<!-- Flash Session-->
+<h1>Add New User</h1> 
+{{session('message')}}
+<form action="add " method="post">
+        @csrf
+        <input type="text" name="user"  placeholder="Enter Your Name">
+        <br>
+        <br>
+        <input type="password" name="password"  placeholder="Enter Your Password">
+        <br>
+        <br>
+        <input type="text" name="phone"  placeholder="Enter Your Phone Number">
+        <br>
+        <br>
+        <button>Add New User</button>
+</form>
+
+
+
+
+
 
 
 
