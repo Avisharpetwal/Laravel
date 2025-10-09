@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,11 +78,21 @@ Route::post('adduser',[UserController::class,'adduser']);
 
 
 //Database
-Route::get('users',[UserController::class,'users']);
+// Route::get('users',[UserController::class,'users']);
 
 
 
 Route::get('students',[StudentController::class,'getStudents']);
+
+// Api
+// Route::get('users',[UserController::class,'getUser']);
+
+//Query Builder
+Route::get('users',[UsersController::class,'query']);
+
+
+
+
 
 
 
