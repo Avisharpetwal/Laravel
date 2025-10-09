@@ -12,8 +12,8 @@
 
     <a href="logout">Logout</a>
 
-
-    {{print_r(session('alldata'))}}
+<!-- all Session data at once -->
+ <!-- {{print_r(session('alldata'))}} -->
 
   
 
