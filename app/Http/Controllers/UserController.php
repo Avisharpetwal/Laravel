@@ -149,4 +149,25 @@ class UserController extends Controller
     }
 
 
+
+// Session 
+    function login(Request  $request){
+        //for name input  only
+        // $request->session()->put('user',$request->input('user'));
+
+
+
+        
+        //For All  input
+        $request->session()->put('alldata',$request->input());
+        
+        return redirect('profile');
+    }
+
+
+    function logout(){
+        session()->pull('user');
+        return redirect('profile');
+
+    }
 }
