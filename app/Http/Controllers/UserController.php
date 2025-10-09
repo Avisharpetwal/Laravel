@@ -156,8 +156,6 @@ class UserController extends Controller
         // $request->session()->put('user',$request->input('user'));
 
 
-
-        
         //For All  input
         $request->session()->put('alldata',$request->input());
         
@@ -170,4 +168,22 @@ class UserController extends Controller
         return redirect('profile');
 
     }
+
+
+
+//Flash Session
+function aduser(Request $request){
+     $request->session()->flash('message','User Add Successfully');
+    return redirect ('user');
+}
+
+
+
+
+
+
+
+
+
+    
 }
