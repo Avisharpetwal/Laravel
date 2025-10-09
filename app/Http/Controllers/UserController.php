@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 //Api 
 use Illuminate\Support\Facades\Http;
+use App\Models\User;
 
 
 
@@ -89,6 +90,62 @@ class UserController extends Controller
         return view('user',['data'=>json_decode($response)]);
         //-------give the status of response-----//
         // return $response->status();
+    }
+
+
+
+
+
+    //ELoquent Model:Query builder 
+    function queries(){
+        //--------------All the Data At Once---------------
+        $result=User::all();
+        // return $result;
+        return view('users',['users'=>$result]);
+
+
+
+        //--------------------------Data With Condition--------------
+        // $result=User::where('phone','12345')->get();
+
+
+        // -------------------------Find With Id 1
+        // $result=User::find(1);
+        // $result=[$result];
+
+
+
+
+        //_-----------------insert the data ------------------------
+        // $result=User::insert([
+        //     'name'=>'Tarun',
+        //     'email'=>'Tarun@test.com',
+        //     'phone'=>'998877',
+        // ]);
+
+        // if($result){
+        //     return "Inserted SuccessFully";
+        // }
+        // else{
+        //     return "No Data Inserted";
+        // }
+
+        
+
+
+
+        ///--------------------update the data (In this you have to add timestamp in your model)
+
+        //  $result=User::where('name','Tarun')->update(['phone'=>'9999']);
+        // if($result){
+        //     return "Update SuccessFully";
+        // }
+        // else{
+        //     return "No Data Updated";
+        // }
+
+
+
     }
 
 
