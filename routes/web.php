@@ -95,6 +95,15 @@ Route::get('students',[StudentController::class,'getStudents']);
 Route::get('user',[UserController::class,'queries']);
 
 
+//Session 
+Route::view('login','login');
+Route::view('profile','profile');
+Route::post('login',[UserController::class,'login']);
+Route::get('logout',[UserController::class,'logout']);
+
+
+
+
 
 
 
