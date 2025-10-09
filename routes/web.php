@@ -88,7 +88,16 @@ Route::get('students',[StudentController::class,'getStudents']);
 // Route::get('users',[UserController::class,'getUser']);
 
 //Query Builder
-Route::get('users',[UsersController::class,'query']);
+// Route::get('users',[UsersController::class,'query']);
+
+
+//ELoquent Model:Query builder
+Route::get('user',[UserController::class,'queries']);
+
+
+
+
+
 
 
 
