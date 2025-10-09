@@ -6,6 +6,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //for database
 use Illuminate\Support\Facades\DB;
+//Api 
+use Illuminate\Support\Facades\Http;
+
+
 
 class UserController extends Controller
 {
@@ -67,10 +71,24 @@ class UserController extends Controller
 
     }
     //Database
-    function users (){
-        //Direct query 
-        $users= DB::select('select * from users');
-        return view('users',['abc'=>$users]);
+    // function users (){
+    //     //Direct query 
+    //     $users= DB::select('select * from users');
+    //     return view('users',['abc'=>$users]);
+    // }
+
+
+    // Api 
+    function getUser(){
+        //For Api
+        $response=Http::get('https://jsonplaceholder.typicode.com/users/1');
+        // return $response;
+
+        //-------give the body of the api ------//
+        $response= $response->body();
+        return view('user',['data'=>json_decode($response)]);
+        //-------give the status of response-----//
+        // return $response->status();
     }
 
 
