@@ -96,10 +96,22 @@ Route::get('user',[UserController::class,'queries']);
 
 
 //Session 
-Route::view('login','login');
-Route::view('profile','profile');
-Route::post('login',[UserController::class,'login']);
-Route::get('logout',[UserController::class,'logout']);
+// Route::view('login','login');
+// Route::view('profile','profile');
+// Route::post('login',[UserController::class,'login']);
+// Route::get('logout',[UserController::class,'logout']);
+
+
+//Flash Session
+Route::view('user','user');
+Route::post('add',[UserController::class,'aduser']);
+Route::view('about','about');
+
+
+//MQSQL 
+
+Route::view('add','add-student');
+Route::post('add',[StudentController::class,'add']);
 
 
 
