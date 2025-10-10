@@ -46,6 +46,7 @@ class StudentController extends Controller
         return view('list-student',['studentd'=>$studentdata]);
     }
 
+    //Function For Delete A Data
     function delete($id){
         $isDeleted=Student::destroy($id);
         if($isDeleted){
@@ -54,12 +55,14 @@ class StudentController extends Controller
 
 
     }
+
+    //Function for Populate A Data
     function edit($id){
         $student=Student::find($id);
         return view('edit',['data'=>$student]);
     }
 
-    
+    //Function For Edit A Data 
     function editstudent( Request $request ,$id){
         $student=Student::find($id);
         $student->name=$request->name;
