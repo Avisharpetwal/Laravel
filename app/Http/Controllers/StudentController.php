@@ -33,4 +33,10 @@ class StudentController extends Controller
         // return $request;
         // return" Student Added SuccessFully";
     }
+
+
+    function list(){
+        $studentdata=Student::all();
+        return view('list-student',['studentd'=>$studentdata]);
+    }
 }
