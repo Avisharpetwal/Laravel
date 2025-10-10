@@ -16,6 +16,12 @@ class StudentController extends Controller
     }
 
 
+
+
+
+
+
+    // Function To add the data 
     function add(Request $request){
 
         $students=new Student();
@@ -25,7 +31,7 @@ class StudentController extends Controller
         $students->save();
 
         if($students){
-            echo"Added SuccessFully";
+            return redirect('list');
         }
         else{
             echo"Not Added yet";
@@ -34,9 +40,37 @@ class StudentController extends Controller
         // return" Student Added SuccessFully";
     }
 
-
+    //Function to Show the Data
     function list(){
         $studentdata=Student::all();
         return view('list-student',['studentd'=>$studentdata]);
+    }
+
+    function delete($id){
+        $isDeleted=Student::destroy($id);
+        if($isDeleted){
+            return redirect('list');
+        }
+
+
+    }
+    function edit($id){
+        $student=Student::find($id);
+        return view('edit',['data'=>$student]);
+    }
+
+    
+    function editstudent( Request $request ,$id){
+        $student=Student::find($id);
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->phone=$request->phone;
+       if( $student->save()){
+        return redirect('list');
+       }
+       else{
+        return "Not Edited";
+       }
+
     }
 }

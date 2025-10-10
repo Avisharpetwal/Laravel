@@ -9,6 +9,7 @@
             <td>Phone</td>
             <td>Created  At</td>
             <td>Updated At</td>
+            <td>Operation</td>
         </tr>
         <tr>
             @foreach($studentd as $d)
@@ -19,9 +20,13 @@
              <td>{{$d->phone}}</td>
              <td>{{$d->created_at}}</td>
              <td>{{$d->updated_at}}</td>
+             <td>
+                <a href="{{'delete/'.$d->id}}">Delete</a>
+                <a href="{{'edit/'.$d->id}}">Edit</a>
+            </td>
             </tr>
         </tr>
         @endforeach
-
+ 
 
         </table></div>
