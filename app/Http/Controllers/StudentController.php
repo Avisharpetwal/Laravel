@@ -42,7 +42,14 @@ class StudentController extends Controller
 
     //Function to Show the Data
     function list(){
-        $studentdata=Student::all();
+        //get all the data at a one time and store it in studentdata
+        // $studentdata=Student::all();
+
+
+         
+        //use pagination to show the data
+        $studentdata=Student::paginate(5);
+
         return view('list-student',['studentd'=>$studentdata]);
     }
 
